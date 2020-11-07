@@ -1,3 +1,8 @@
+### Tutorial: "[React JS Crash Course](https://youtu.be/sBws8MSXN7A)" by [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)
+
+[Check out running project!](https://todo-pavel.glitch.me)
+[Check out on Glitch!](https://glitch.com/~todo-pavel)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
