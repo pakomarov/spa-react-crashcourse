@@ -1,32 +1,43 @@
 import React, {Component} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import Header from './components/Header';
+import AddTodo from './components/AddTodo';
 import Todos from './components/Todos';
 
 class App extends Component {
   state = {
     todos: [
       {
-        id: 1,
+        id: uuidv4(),
         title: 'Take out the trash',
         completed: true,
       },
       {
-        id: 2,
+        id: uuidv4(),
         title: 'Wash dishes',
         completed: false,
       },
       {
-        id: 3,
+        id: uuidv4(),
         title: 'Walk dog',
         completed: true,
       },
       {
-        id: 4,
+        id: uuidv4(),
         title: 'Cooking',
         completed: false,
       },
     ],
+  }
+
+  _onAddTodoSubmit = (title) => {
+    const newTodo = {
+      id: uuidv4(),
+      title,
+      completed: false,
+    };
+    this.setState({ todos: [...this.state.todos, newTodo]});
   }
 
   _toggleTodosTodoItemComplete = (id) => {
@@ -49,12 +60,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header/>
-        <Todos
-          todos={this.state.todos}
-          toggleTodoItemComplete={this._toggleTodosTodoItemComplete}
-          destroyTodoItem={this._destroyTodosTodoItem}
-        />
+        <div className="container">
+          <Header/>
+          <AddTodo onSubmit={this._onAddTodoSubmit}/>
+          <Todos
+            todos={this.state.todos}
+            toggleTodoItemComplete={this._toggleTodosTodoItemComplete}
+            destroyTodoItem={this._destroyTodosTodoItem}
+          />
+        </div>
       </div>
     );
   }
