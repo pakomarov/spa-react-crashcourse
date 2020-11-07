@@ -4,13 +4,19 @@ import PropTypes from 'prop-types';
 
 class Todos extends Component {
   render() {
+    const {todos, toggleTodoItemComplete, destroyTodoItem} = this.props;
     return (
-      <div>
-        <h1>Todos</h1>
-        {this.props.todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} toggleComplete={this.props.toggleTodoItemComplete} />
+      <ul style={{margin: '0', padding: '0', listStyle: 'none'}}>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            <TodoItem
+              todo={todo}
+              toggleComplete={toggleTodoItemComplete}
+              destroy={destroyTodoItem}
+            />
+          </li>
         ))}
-      </div>
+      </ul>
     );
   }
 }
@@ -22,6 +28,7 @@ Todos.propTypes = {
     })
   ).isRequired,
   toggleTodoItemComplete: PropTypes.func.isRequired,
+  destroyTodoItem: PropTypes.func.isRequired,
 }
 
 export default Todos;
