@@ -8,7 +8,7 @@ class Todos extends Component {
       <div>
         <h1>Todos</h1>
         {this.props.todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem key={todo.id} todo={todo} toggleComplete={this.props.toggleTodoItemComplete} />
         ))}
       </div>
     );
@@ -21,6 +21,7 @@ Todos.propTypes = {
       id: PropTypes.number.isRequired,
     })
   ).isRequired,
+  toggleTodoItemComplete: PropTypes.func.isRequired,
 }
 
 export default Todos;

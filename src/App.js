@@ -8,7 +8,7 @@ class App extends Component {
       {
         id: 1,
         title: 'Take out the trash',
-        completed: false,
+        completed: true,
       },
       {
         id: 2,
@@ -18,7 +18,7 @@ class App extends Component {
       {
         id: 3,
         title: 'Walk dog',
-        completed: false,
+        completed: true,
       },
       {
         id: 4,
@@ -28,10 +28,19 @@ class App extends Component {
     ],
   }
 
+  _toggleTodosTodoItemComplete = (id) => {
+    this.setState({ todos: this.state.todos.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+      }
+      return todo;
+    }) })
+  }
+
   render() {
     return (
       <div className="App">
-        <Todos todos={this.state.todos}/>
+        <Todos todos={this.state.todos} toggleTodoItemComplete={this._toggleTodosTodoItemComplete} />
       </div>
     );
   }
