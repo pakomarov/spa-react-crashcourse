@@ -41,7 +41,7 @@ TodoItem.propTypes = {
     }).isRequired,
   toggleComplete: PropTypes.func.isRequired,
   destroy: PropTypes.func.isRequired,
-}
+};
 
 const btnStyle ={
   float: 'right',

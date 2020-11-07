@@ -29,6 +29,6 @@ Todos.propTypes = {
   ).isRequired,
   toggleTodoItemComplete: PropTypes.func.isRequired,
   destroyTodoItem: PropTypes.func.isRequired,
-}
+};
 
 export default Todos;
