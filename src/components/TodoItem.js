@@ -18,7 +18,7 @@ function TodoItem({
       textDecoration: completed ? 'line-through' : 'none',
     }}>
       <p>
-        <input type="checkbox" onChange={toggleComplete.bind(this, id)} checked={completed} /> {' '}
+        <input type="checkbox" onChange={() => toggleComplete(id)} checked={completed} /> {' '}
         {title}
         <button onClick={destroy.bind(this, id)} style={btnStyle}>x</button>
       </p>
