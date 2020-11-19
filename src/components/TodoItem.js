@@ -20,7 +20,7 @@ function TodoItem({
       <p>
         <input type="checkbox" onChange={() => toggleComplete(id)} checked={completed} /> {' '}
         {title}
-        <button onClick={destroy.bind(this, id)} style={btnStyle}>x</button>
+        <button onClick={() => destroy(id)} style={btnStyle}>x</button>
       </p>
     </div>
   );
@@ -28,7 +28,7 @@ function TodoItem({
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired,
     }).isRequired,

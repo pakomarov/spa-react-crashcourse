@@ -21,7 +21,7 @@ function Todos({todos, toggleTodoItemComplete, destroyTodoItem}) {
 Todos.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
     })
   ).isRequired,
   toggleTodoItemComplete: PropTypes.func.isRequired,
