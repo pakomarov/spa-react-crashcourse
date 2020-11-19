@@ -5,7 +5,7 @@ import AddTodo from '../components/AddTodo';
 import Todos from '../components/Todos';
 
 const Main = () => {
-  const todos = useSelector(state => state);
+  const todos = useSelector(state => state.todos);
   const dispatch = useDispatch();
 
   const onAddTodo = useCallback(
