@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Header() {
+const Header = () => {
   return (
     <header style={headerStyle}>
       <h1>TodoList</h1>

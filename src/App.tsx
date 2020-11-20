@@ -7,7 +7,7 @@ import Header from './components/Header';
 import Main from './pages/Main';
 import About from './pages/About';
 
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
       <Router>

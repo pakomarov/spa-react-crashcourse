@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function TodoItem({
+const TodoItem = ({
   todo: {
     id,
     title,
@@ -9,7 +9,7 @@ function TodoItem({
   },
   toggleComplete,
   destroy,
-}) {
+}) => {
   return (
     <div style={{
       background: '#f4f4f4',

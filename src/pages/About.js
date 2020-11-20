@@ -1,6 +1,6 @@
 import React from 'react';
 
-function About() {
+const About = () => {
   return (
     <div style={{textAlign: 'center'}}>
       <h1>About</h1>

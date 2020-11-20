@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem  from './TodoItem';
 import PropTypes from 'prop-types';
 
-function Todos({todos, toggleTodoItemComplete, destroyTodoItem}) {
+const Todos = ({todos, toggleTodoItemComplete, destroyTodoItem}) => {
   return (
     <ul style={{margin: '0', padding: '0', listStyle: 'none'}}>
       {todos.map((todo) => (
