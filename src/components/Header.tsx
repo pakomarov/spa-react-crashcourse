@@ -10,10 +10,10 @@ const Header = () => {
   )
 }
 
-const headerStyle = {
+const headerStyle: React.CSSProperties = {
   background: '#333',
   color: '#fff',
-  textAlign:'center',
+  textAlign:'center' as any,
   padding: '10px',
 };
 

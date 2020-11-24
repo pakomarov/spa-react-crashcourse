@@ -9,4 +9,6 @@ const store = createStore(rootReducer, load(), composeWithDevTools(
   applyMiddleware(save())
 ));
 
+export type TRootState = ReturnType<typeof rootReducer>;
+
 export default store;

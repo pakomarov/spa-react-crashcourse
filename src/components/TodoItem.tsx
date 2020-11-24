@@ -1,42 +1,38 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { ITodo } from '../redux/todos/types';
+
+interface ITodoProps {
+  todo: ITodo,
+  toggleComplete: (id: string) => void,
+  destroy: (id: string) => void,
+}
 
 const TodoItem = ({
   todo: {
-    id,
     title,
     completed,
+    id,
   },
   toggleComplete,
   destroy,
-}) => {
+}: ITodoProps) => {
   return (
     <div style={{
       background: '#f4f4f4',
       padding: '10px',
       borderBottom: '1px #ccc dotted',
       textDecoration: completed ? 'line-through' : 'none',
-    }}>
+    } as React.CSSProperties}>
       <p>
-        <input type="checkbox" onChange={() => toggleComplete(id)} checked={completed} /> {' '}
+        <input type="checkbox" onChange={(): void => { toggleComplete(id) }} checked={completed} /> {' '}
         {title}
-        <button onClick={() => destroy(id)} style={btnStyle}>x</button>
+        <button onClick={(): void => { destroy(id) }} style={btnStyle}>x</button>
       </p>
     </div>
   );
 };
 
-TodoItem.propTypes = {
-  todo: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      completed: PropTypes.bool.isRequired,
-    }).isRequired,
-  toggleComplete: PropTypes.func.isRequired,
-  destroy: PropTypes.func.isRequired,
-};
-
-const btnStyle ={
+const btnStyle: React.CSSProperties ={
   float: 'right',
   padding: '5px 9px',
   color: '#fff',

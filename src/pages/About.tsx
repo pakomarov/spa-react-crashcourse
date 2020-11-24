@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div style={{textAlign: 'center'}}>
+    <div style={{textAlign: 'center'} as React.CSSProperties}>
       <h1>About</h1>
       <p>Made by <a href="https://github.com/pakomarov">Pavel Komarov</a></p>
       <p>Checkout code:{' '}
@@ -20,7 +20,7 @@ const About = () => {
         </a>
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
