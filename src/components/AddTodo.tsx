@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 interface IAddTodoProps {
-  onSubmit: (title: string) => void,
+  onSubmit: (title: string) => void;
 }
 
 interface IAddTodoState {
-  title: string,
+  title: string;
 }
 
 export class AddTodo extends Component<IAddTodoProps, IAddTodoState> {

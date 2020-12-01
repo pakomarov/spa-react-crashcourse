@@ -3,9 +3,9 @@ import TodoItem  from './TodoItem';
 import { ITodo } from '../redux/todos/types';
 
 interface TodosProps {
-  todos: ITodo[],
-  toggleTodoItemComplete: (id: string) => void,
-  destroyTodoItem: (id: string) => void,
+  todos: ITodo[];
+  toggleTodoItemComplete: (id: string) => void;
+  destroyTodoItem: (id: string) => void;
 }
 
 const Todos = ({todos, toggleTodoItemComplete, destroyTodoItem}: TodosProps) => {

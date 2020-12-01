@@ -2,9 +2,9 @@ import React from 'react';
 import { ITodo } from '../redux/todos/types';
 
 interface ITodoProps {
-  todo: ITodo,
-  toggleComplete: (id: string) => void,
-  destroy: (id: string) => void,
+  todo: ITodo;
+  toggleComplete: (id: string) => void;
+  destroy: (id: string) => void;
 }
 
 const TodoItem = ({

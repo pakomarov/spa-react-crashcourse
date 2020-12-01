@@ -1,13 +1,13 @@
 import { TId, ITodo, TTodosActionTypes, ADD_TODO, TOGGLE_TODO, DESTROY_TODO } from './types';
 import { v4 as uuidv4 } from 'uuid';
 
-interface IAddTodo {
-  title: string,
-  completed?: boolean,
-  id?: string,
+interface IAddTodoParams {
+  title: string;
+  completed?: boolean;
+  id?: string;
 }
 
-export const addTodo = ({ title, completed = false, id = uuidv4()}: IAddTodo): TTodosActionTypes => {
+export const addTodo = ({ title, completed = false, id = uuidv4()}: IAddTodoParams): TTodosActionTypes => {
   const newTodo: ITodo = {
     title,
     completed,
